@@ -48,8 +48,8 @@ public class CrimeFragment extends Fragment {
                 super.onCreate(savedInstanceState);
                 UUID crimeId = (UUID) getArguments().getSerializable(ARG_CRIME_ID);
                 mCrime = CrimeLab.get(getActivity()).getCrime(crimeId);
-
             }
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
         View v = inflater.inflate(R.layout.fragment_crime, container, false);
@@ -102,7 +102,7 @@ public class CrimeFragment extends Fragment {
             return;
         }
 
-        if (resultCode == REQUEST_DATE) {
+        if (requestCode == REQUEST_DATE) {
             Date date = (Date) data
                     .getSerializableExtra(DatePickerFragment.EXTRA_DATE);
             mCrime.setDate(date);
